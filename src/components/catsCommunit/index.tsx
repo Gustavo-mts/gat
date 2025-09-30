@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import { cn } from "../../lib/utils"
 import Heart from "../../assets/icons/heart.png"
 import { type VItem, useVerticalPeekCarousel } from "./useVerticalPeekCarousel" // Importa tipos e hook
@@ -127,8 +126,14 @@ const photos: VItem[] = [
 
 export default function CatsCommunit() {
   return (
-    <div className="w-full flex justify-center p-4">
-      <VerticalPeekCarousel items={photos} className="max-w-[1700px]" />
+    <div className="py-16 relative">
+      <div className="ml-32 2xl:ml-[460px] z-10 absolute">
+        <p className="font-sora font-normal text-[20px] 2xl:text-[24px] leading-[25px] tracking-normal">Faça parte da comunidade de gatunos que amam <br/> design e papelão compartilhando a hashtag:</p>
+        <h6 className="font-sora font-normal text-[75px] leading-[100%] tracking-normal text-[#7EB4C8]">#AdoradoresDePapelão</h6>
+      </div>
+      <div className="w-full flex justify-center p-4 z-0 mt-20">
+        <VerticalPeekCarousel items={photos} className="max-w-[1700px]" />
+      </div>
     </div>
   )
 }
