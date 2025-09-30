@@ -32,12 +32,12 @@ export interface CarouselProps {
 }
 
 interface UseCarouselReturn {
+  carouselRef: React.RefObject<HTMLDivElement | null> 
   currentIndex: number
   currentItemsPerView: number
   padLeft: number
   padRight: number
   maxStart: number
-  carouselRef: React.RefObject<HTMLDivElement>
   getTransform: () => string
   getItemStyle: () => React.CSSProperties
   goToSlide: (index: number) => void
@@ -74,7 +74,7 @@ export function useCollections({
   const [dragOffset, setDragOffset] = useState(0)
   const [currentItemsPerView, setCurrentItemsPerView] = useState(1)
 
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const carouselRef = useRef<HTMLDivElement | null >(null)
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const calcItemsPerView = useCallback(() => {

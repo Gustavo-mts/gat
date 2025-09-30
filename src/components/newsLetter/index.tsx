@@ -30,7 +30,7 @@ export default function NewsLetter() {
 
             <form className="w-full xl:w-[75%] xl:pl-10 2xl:pl-16 space-y-6 2xl:space-y-7" action="/api/subscribe" method="POST">
               <label className="block">
-                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider" htmlFor="petName">
+                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider">
                   NOME DO SEU PET
                 </span>
                 <input
@@ -45,7 +45,7 @@ export default function NewsLetter() {
               </label>
 
               <label className="block">
-                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider" htmlFor="email">
+                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider">
                   SEU EMAIL
                 </span>
                 <input

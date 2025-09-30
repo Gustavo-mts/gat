@@ -59,6 +59,10 @@ export function FlexibleCarousel({
     loop,
     dragEnabled,
     pauseOnHover,
+    showArrows,
+    showDots,
+    className,
+    itemClassName
   })
 
   return (
@@ -192,7 +196,7 @@ export default function Collections() {
           loop
           dragEnabled
           pauseOnHover
-          className="w-full"
+          className="w-full" itemClassName={""}
         />
       </div>
       <a
