@@ -8,8 +8,7 @@ export default function MinimalistContent() {
         <div className="relative z-0">
           <MinimalistBanner />
         </div>
-
-        <h3
+        <h2
           className="
             absolute z-20 font-sora font-bold text-white
             left-[82px] top-12 text-[50px] leading-[57px] tracking-normal
@@ -18,7 +17,7 @@ export default function MinimalistContent() {
           "
         >
           MINIMA <br /> LISMO
-        </h3>
+        </h2>
 
         <p
           className="
@@ -32,7 +31,8 @@ export default function MinimalistContent() {
           low-hanging data most driver's.
         </p>
 
-        <button
+        <a
+          href="/colecoes/minimalismo"
           className="
             absolute z-20 flex items-center space-x-[10px] rounded-[29px] border border-current uppercase text-[#000]
             left-96 top-[360px] px-6 py-3 font-sora font-light text-[20px] leading-[100%] tracking-normal
@@ -40,9 +40,10 @@ export default function MinimalistContent() {
             xl:left-96 xl:top-[450px] xl:text-[20px]
             2xl:left-[24rem] 2xl:top-[490px] 2xl:text-[22px] 2xl:px-7 2xl:py-3.5
           "
+          role="button"
         >
           <span className="uppercase">Explorar</span>
-        </button>
+        </a>
 
         <div
           className="
@@ -52,9 +53,9 @@ export default function MinimalistContent() {
             2xl:right-[500px] 2xl:-top-[10px] 2xl:w-[220px] 2xl:h-[64px]
           "
         >
-          <button className="font-sora font-extralight text-sm uppercase underline">
+          <a href="/colecoes" className="font-sora font-extralight text-sm uppercase underline">
             Ver todos
-          </button>
+          </a>
         </div>
       </div>
     </section>

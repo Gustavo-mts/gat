@@ -145,7 +145,10 @@ function VerticalPeekCarousel({
   }, [enableTransition, transitionMs])
 
   return (
-    <div className={cn("relative w-full overflow-x-hidden select-none", className)}>
+    <div className={cn("relative w-full overflow-x-hidden select-none", className)}
+      role="region"
+      aria-label="Carrossel de Fotos da Comunidade"
+    >
       <div
         className="overflow-visible rounded-lg mx-auto"
         style={{ width: viewportBase, paddingRight: peekRight }}
@@ -175,7 +178,7 @@ function VerticalPeekCarousel({
             >
               <img
                 src={item.src}
-                alt={item.alt ?? ""}
+                alt={item.alt || `Foto de um gato da comunidade com ${item.caption || 'milhares'} de curtidas`}
                 className="w-full h-full object-cover"
                 draggable={false}
               />
@@ -189,6 +192,7 @@ function VerticalPeekCarousel({
                         <img
                           src={Heart}
                           className="h-[18px] w-auto xl:h-[20px] 2xl:h-[22px]"
+                          alt="Ícone de coração"
                         />
                         <p className="relative z-10 text-white text-sm xl:text-[15px] 2xl:text-[16px]">
                           {item.caption}
@@ -207,11 +211,11 @@ function VerticalPeekCarousel({
 }
 
 const photos: VItem[] = [
-  { id: 1, src: "/cummunit/cat-1.jpg", caption: "10 mil" },
-  { id: 2, src: "/cummunit/cat-2.jpg", caption: "9,1 mil" },
-  { id: 3, src: "/cummunit/cat-3.jpg", caption: "7,3 mil" },
-  { id: 4, src: "/cummunit/cat-4.jpg", caption: "12 mil" },
-  { id: 5, src: "/cummunit/cat-5.jpg", caption: "8,6 mil" },
+  { id: 1, src: "/cummunit/cat-1.jpg", caption: "10 mil", alt: "Gato preto e branco em arranhador" },
+  { id: 2, src: "/cummunit/cat-2.jpg", caption: "9,1 mil", alt: "Gato laranja dormindo em casinha de madeira" },
+  { id: 3, src: "/cummunit/cat-3.jpg", caption: "7,3 mil", alt: "Dois gatos brincando em túnel" },
+  { id: 4, src: "/cummunit/cat-4.jpg", caption: "12 mil", alt: "Gato siamês relaxando em almofada" },
+  { id: 5, src: "/cummunit/cat-5.jpg", caption: "8,6 mil", alt: "Gato deitado em móvel de design" },
 ]
 
 export default function CatsCommunit() {

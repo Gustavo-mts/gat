@@ -4,7 +4,7 @@ import Variacao from '../../assets/images/variacoes.png'
 
 export default function MostWanted() {
   return (
-    <div className="flex justify-center py-6">
+    <section className="flex justify-center py-6" aria-label="Produtos Mais Queridinhos da GAT">
       <div className="flex items-start
                       gap-4 xl:gap-6 2xl:gap-10
                       4xl:px-12
@@ -20,10 +20,10 @@ export default function MostWanted() {
             <img src={Elipse} className="
               w-auto h-auto
               max-w-[85%] xl:max-w-[90%] 2xl:max-w-[95%]
-            " />
+            " alt="" aria-hidden="true" />
           </div>
 
-          <div className="
+          <h2 className="
               font-sora font-bold uppercase
               text-[70px] leading-[74px]
               xl:text-[78px] xl:leading-[82px]
@@ -32,18 +32,19 @@ export default function MostWanted() {
               -mt-[110px] ml-6
             ">
             Queri <br /> dinho <span className="font-normal">deles</span>
-          </div>
+          </h2>
 
-          <button className="
+          <a href="/destaques/queridinhos" className="
               flex items-center space-x-[10px]
               rounded-[29px] border border-current uppercase
               px-6 py-3 ml-6 mt-8
               text-[20px] leading-[100%]
               xl:text-[20px]
               2xl:text-[22px]
-            ">
+              inline-flex
+            " role="button">
             <span className="font-sora font-light">Ver tudo</span>
-          </button>
+          </a>
         </div>
         {[1, 2, 3].map((i) => (
           <div
@@ -78,32 +79,33 @@ export default function MostWanted() {
               </div>
             </div>
 
-            <div className="w-full flex justify-center my-12 xl:my-10 2xl:my-10">
+            <a href={`/produto/${i}`} className="w-full flex justify-center my-12 xl:my-10 2xl:my-10" aria-label={`Ver detalhes do Toca Tunel Módulos ${i}`}>
               <img
                 src={Chart}
                 className="max-w-[85%] xl:max-w-[88%] 2xl:max-w-[90%] h-auto object-contain"
+                alt={`Imagem do produto Toca Tunel Módulos, item ${i}`}
               />
-            </div>
+            </a>
 
             <div className="mt-auto">
               <div className="flex justify-between items-end">
-                <div className="font-sora leading-none tracking-normal">
-                  <span className="font-bold text-base xl:text-[17px] 2xl:text-[18px] uppercase">
+                <a href={`/produto/${i}`} className="font-sora leading-none tracking-normal">
+                  <h3 className="font-bold text-base xl:text-[17px] 2xl:text-[18px] uppercase">
                     Toca tunel <br /> módulos
-                  </span>
+                  </h3>
                   <div className="font-light text-[12px] xl:text-[13px] 2xl:text-[14px] mt-1">
                     <span className="line-through mr-1">R$00,00</span>
                     <span className="font-bold">R$0000,00</span>
                   </div>
-                </div>
+                </a>
                 <div className="pr-2">
-                  <img src={Variacao} className="" />
+                  <img src={Variacao} alt="Opções de variação de cor/modelo disponíveis" />
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

@@ -2,38 +2,40 @@ import NewsLetterImage from '../../assets/images/newsletter.png'
 
 export default function NewsLetter() {
   return (
-    <section className="flex justify-center bg-[#efefef]">
+    <section className="flex justify-center bg-[#efefef]" aria-label="Assinatura da Newsletter GAT">
       <div className="w-full max-w-[1280px] 2xl:max-w-[1600px] px-4 xl:px-6 2xl:px-10 py-4 xl:py-0 flex border border-b-0 border-l-0 border-r-0">
         <div className="p-6 2xl:p-8 flex-shrink-0">
           <img
             src={NewsLetterImage}
             className="w-[460px] h-auto 2xl:w-[560px]"
-            alt="Assine a newsletter para ganhar 10% na primeira compra"
+            alt="Assine a newsletter e ganhe 10% de desconto na primeira compra de produtos GAT para gatos."
           />
         </div>
         <div className="pb-6 pt-16 2xl:pt-20 flex-1 min-w-0">
-          <h3 className="font-sora font-normal text-[50px] leading-none tracking-normal
+          <h2 className="font-sora font-normal text-[50px] leading-none tracking-normal
                          2xl:text-[64px]">
             NewsLetter
-          </h3>
+          </h2>
 
           <div className="flex flex-col xl:flex-row mt-8 gap-8 xl:gap-10 2xl:gap-14">
             <div className="font-sora text-[14px] leading-[25px] tracking-normal
                             2xl:text-[16px] 2xl:leading-[28px]">
-              <h5 className="font-bold uppercase">
+              <h3 className="font-bold uppercase">
                 CADASTRE-SE E GANHE 10% OFF NA SUA PRIMEIRA COMPRA
-              </h5>
+              </h3>
               <p className="font-normal mt-4">
                 Seja a primeira a receber lançamentos, novidades e promoções.
               </p>
             </div>
 
-            <form className="w-full xl:w-[75%] xl:pl-10 2xl:pl-16 space-y-6 2xl:space-y-7">
+            <form className="w-full xl:w-[75%] xl:pl-10 2xl:pl-16 space-y-6 2xl:space-y-7" action="/api/subscribe" method="POST">
               <label className="block">
-                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider">
+                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider" htmlFor="petName">
                   NOME DO SEU PET
                 </span>
                 <input
+                  id="petName"
+                  name="petName"
                   type="text"
                   className="block w-full border-b border-black/50 bg-transparent
                              focus:outline-none focus:border-black
@@ -43,15 +45,18 @@ export default function NewsLetter() {
               </label>
 
               <label className="block">
-                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider">
+                <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider" htmlFor="email">
                   SEU EMAIL
                 </span>
                 <input
+                  id="email"
+                  name="email"
                   type="email"
                   className="block w-full border-b border-black/50 bg-transparent
                              focus:outline-none focus:border-black
                              py-0 2xl:py-1"
                   aria-label="Seu e-mail"
+                  required
                 />
               </label>
 

@@ -13,7 +13,7 @@ const baseItems: CarouselItem[] = [
   {
     id: "innovation",
     content: (
-      <div className="bg-card rounded-lg p-0 text-center h-[45px] flex flex-col justify-center">
+      <div className="bg-card rounded-lg p-0 text-center h-[45px] flex flex-col justify-center" aria-hidden="true">
         <p className="font-sora font-light text-lg leading-none tracking-normal text-right">
           Benefício Terciário
         </p>
@@ -24,14 +24,14 @@ const baseItems: CarouselItem[] = [
     id: "creativity",
     content: (
       <div className="bg-card rounded-lg p-0 text-center h-[45px] flex flex-col justify-center items-center">
-        <img src={Paw} className="w-[17.29px] h-[16.84px]" />
+        <img src={Paw} className="w-[17.29px] h-[16.84px]" alt="Ícone de pata de gato" />
       </div>
     ),
   },
   {
     id: "excellence",
     content: (
-      <div className="bg-card rounded-lg p-0 text-center h-[45px] flex flex-col justify-center">
+      <div className="bg-card rounded-lg p-0 text-center h-[45px] flex flex-col justify-center" aria-hidden="true">
         <p className="font-sora font-light text-lg leading-none tracking-normal text-right">
           Lisan Al Gaib
         </p>
@@ -42,7 +42,7 @@ const baseItems: CarouselItem[] = [
     id: "collaboration",
     content: (
       <div className="bg-card rounded-lg p-0 text-center h-[45px] flex flex-col justify-center items-center">
-        <img src={Paw} className="w-[17.29px] h-[16.84px]" />
+        <img src={Paw} className="w-[17.29px] h-[16.84px]" alt="Ícone de pata de gato" />
       </div>
     ),
   },
@@ -50,9 +50,7 @@ const baseItems: CarouselItem[] = [
 
 type Props = {
   items?: CarouselItem[]
-  /** pixels/segundo */
   speed?: number
-  /** espaçamento entre itens (px) */
   gap?: number
   pauseOnHover?: boolean
   className?: string
@@ -124,6 +122,8 @@ export default function BenefitCarouselInfiniteTight({
       className={cn("w-full select-none", className)}
       onMouseEnter={() => pauseOnHover && setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      role="region"
+      aria-label="Carrossel de Benefícios Rotativos"
     >
       <div
         ref={wrapperRef}

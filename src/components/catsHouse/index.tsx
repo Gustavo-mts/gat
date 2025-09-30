@@ -1,6 +1,6 @@
 export default function CatsHouse() {
   return (
-    <section className="flex justify-center">
+    <section className="flex justify-center" aria-label="Produtos em destaque no ambiente GAT">
       <div
         className="
           relative flex w-full
@@ -9,32 +9,38 @@ export default function CatsHouse() {
           max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1600px]
         "
       >
+        <img
+          src="/cats-banner.png"
+          alt="Banner de ambiente decorado com casinhas e arranhadores minimalistas para gatos"
+          style={{ display: 'none' }}
+        />
+
         <div
           className="
             relative
-            basis-[69%]  /* ~880px de 1280px */
+            basis-[69%]
             h-full
           "
         >
-          <div className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[50%] left-[30.9%] -translate-y-1/2 rounded-full bg-white">
+          <a href="/produto/1" aria-label="Ver produto 1" className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[50%] left-[30.9%] -translate-y-1/2 rounded-full bg-white">
             1
-          </div>
+          </a>
 
-          <div className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[54.5%] left-[50%] -translate-y-1/2 rounded-full bg-white">
+          <a href="/produto/2" aria-label="Ver produto 2" className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[54.5%] left-[50%] -translate-y-1/2 rounded-full bg-white">
             2
-          </div>
+          </a>
 
-          <div className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[10.6%] left-[61.4%] -translate-y-1/2 rounded-full bg-white">
+          <a href="/produto/3" aria-label="Ver produto 3" className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[10.6%] left-[61.4%] -translate-y-1/2 rounded-full bg-white">
             3
-          </div>
+          </a>
 
-          <div className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[22.7%] left-[89.8%] -translate-y-1/2 rounded-full bg-white">
+          <a href="/produto/4" aria-label="Ver produto 4" className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[22.7%] left-[89.8%] -translate-y-1/2 rounded-full bg-white">
             4
-          </div>
+          </a>
 
-          <div className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[50%] left-[98.9%] -translate-y-1/2 rounded-full bg-white">
+          <a href="/produto/5" aria-label="Ver produto 5" className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[50%] left-[98.9%] -translate-y-1/2 rounded-full bg-white">
             5
-          </div>
+          </a>
         </div>
 
         <div className="flex items-start justify-start h-full ml-16">
@@ -78,16 +84,13 @@ export default function CatsHouse() {
               himenaeos.
             </p>
 
-            <button
-              className="
-                mt-6 rounded-[29px] border uppercase
-                font-sora font-normal
-                py-4 pl-8 pr-4 text-[17px]
-                xl:text-[18px] 2xl:text-[19px]
-              "
+            <a
+              href="/selecao-de-produtos"
+              className="mt-6 rounded-[29px] border uppercase font-sora font-normal py-4 pl-8 pr-4 text-[17px] xl:text-[18px] 2xl:text-[19px] inline-block text-center"
+              role="button"
             >
               Ver seleção
-            </button>
+            </a>
           </div>
         </div>
       </div>

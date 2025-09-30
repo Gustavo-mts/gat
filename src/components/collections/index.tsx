@@ -210,6 +210,9 @@ export function FlexibleCarousel({
         setIsHovered(false)
         if (isDragging) handleDragEnd()
       }}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Carrossel de Destaques"
     >
       <div
         ref={carouselRef}
@@ -231,8 +234,16 @@ export function FlexibleCarousel({
           className="flex transition-transform duration-300 ease-out"
           style={{ transform: getTransform(), cursor: dragEnabled ? (isDragging ? "grabbing" : "grab") : "default", gap }}
         >
-          {items.map((item) => (
-            <div key={item.id} className={cn("flex-shrink-0 select-none", itemClassName)} style={getItemStyle()}>
+          {items.map((item, index) => (
+            <div 
+              key={item.id} 
+              className={cn("flex-shrink-0 select-none", itemClassName)} 
+              style={getItemStyle()}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${items.length}`}
+              aria-hidden={index !== currentIndex ? "true" : "false"}
+            >
               {item.content}
             </div>
           ))}
@@ -245,11 +256,17 @@ export function FlexibleCarousel({
             src={Left}
             className="absolute w-10 xl:w-[59px] left-4 xl:left-24 top-1/2 -translate-y-1/2 backdrop-blur-sm transition-all duration-200 cursor-pointer"
             onClick={goToPrevious}
+            alt="Anterior"
+            role="button"
+            aria-label="Ir para o slide anterior"
           />
           <img
             src={Right}
             className="absolute w-10 xl:w-[59px] right-4 xl:right-24 top-1/2 -translate-y-1/2 backdrop-blur-sm transition-all duration-200 cursor-pointer"
             onClick={goToNext}
+            alt="Próximo"
+            role="button"
+            aria-label="Ir para o próximo slide"
           />
         </>
       )}
@@ -260,6 +277,8 @@ export function FlexibleCarousel({
               key={i}
               className={cn("h-2 w-2 rounded-full transition-all", i === currentIndex ? "bg-primary scale-125" : "bg-muted-foreground/30 hover:bg-muted-foreground/50")}
               onClick={() => goToSlide(i)}
+              aria-current={i === currentIndex ? "true" : "false"}
+              aria-label={`Ir para slide ${i + 1}`}
             />
           ))}
         </div>
@@ -274,34 +293,35 @@ const imageItems: CarouselItem[] = [
     id: 1,
     content: (
       <div className="relative rounded-lg overflow-hidden w-full h-[220px] sm:h-[360px] xl:h-[559px] 2xl:h-[640px]">
-        <img src="/sliping-cat.png" alt="Modern Architecture" className="w-full h-full object-cover" />
+        <img src="/sliping-cat.png" alt="Gato dormindo em arranhador de design moderno" className="w-full h-full object-cover" />
       </div>
     ),
-    alt: "Modern Architecture",
+    alt: "Gato dormindo em arranhador de design moderno",
   },
   {
     id: 2,
     content: (
       <div className="relative rounded-lg overflow-hidden w-full h-[220px] sm:h-[360px] xl:h-[559px] 2xl:h-[640px]">
-        <img src="/new-colection.png" alt="Nature Landscape" className="w-full h-full object-cover" />
+        <img src="/new-colection.png" alt="Anúncio: Nova coleção de arranhadores minimalistas para gatos" className="w-full h-full object-cover" />
       </div>
     ),
-    alt: "Nature Landscape",
+    alt: "Anúncio: Nova coleção de arranhadores minimalistas para gatos",
   },
   {
     id: 3,
     content: (
       <div className="relative rounded-lg overflow-hidden w-full h-[220px] sm:h-[360px] xl:h-[559px] 2xl:h-[640px]">
-        <img src="/cats-and-flower.png" alt="City Skyline" className="w-full h-full object-cover" />
+        <img src="/cats-and-flower.png" alt="Gatos brincando ao lado de vaso de planta em arranhador GAT" className="w-full h-full object-cover" />
       </div>
     ),
-    alt: "City Skyline",
+    alt: "Gatos brincando ao lado de vaso de planta em arranhador GAT",
   },
 ]
 
 export default function Collections() {
   return (
     <section className="relative w-full flex flex-col items-center overflow-hidden">
+      <h2 className="sr-only">Coleções e Destaques de Produtos GAT</h2>
       <div className="w-full max-w-[100%] sm:max-w-[95%] xl:max-w-[1291px] 2xl:max-w-[1500px] mx-auto">
         <FlexibleCarousel
           items={imageItems}
@@ -319,14 +339,14 @@ export default function Collections() {
           className="w-full"
         />
       </div>
-
-      <button
+      <a
+        href="/colecoes"
         className="absolute bottom-6 xl:bottom-8 2xl:bottom-10 w-[157px] bg-[#000] flex items-center justify-center rounded-[29px] border p-3 px-6 uppercase z-10"
       >
         <span className="font-sora text-white font-light text-[20px] leading-[100%] tracking-normal">
           Ver tudo
         </span>
-      </button>
+      </a>
     </section>
   )
 }
