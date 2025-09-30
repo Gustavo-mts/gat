@@ -4,7 +4,6 @@ import RetanlgeCats from '../../assets/images/Rectangle-cats.png'
 export default function About() {
   return (
     <section className="flex justify-center bg-[#efefef]">
-      {/* Wrapper centralizado: em xl (1280) mantém 1280px; em 2xl cresce */}
       <div className="
         w-full
         h-[660px] xl:h-[660px] 2xl:h-[780px]
@@ -12,9 +11,7 @@ export default function About() {
         px-4 xl:px-6 2xl:px-10
         flex
       ">
-        {/* Coluna esquerda (elipse + título) */}
         <div className="w-1/2 py-16 relative">
-          {/* Elipse — em xl mantém o tamanho e margens; em 2xl cresce */}
           <img
             src={ElipseRed}
             className="
@@ -24,7 +21,6 @@ export default function About() {
             "
           />
 
-          {/* Título — mantém posição exata em xl; cresce e reposiciona só em 2xl */}
           <h1
             className="
               w-[396px] ml-52 mt-[-180px]
@@ -37,9 +33,7 @@ export default function About() {
           </h1>
         </div>
 
-        {/* Coluna direita (imagem + texto + CTA) */}
         <div className="w-1/2 flex flex-col justify-center">
-          {/* Imagem — em xl mantém, em 2xl cresce */}
           <img
             src={RetanlgeCats}
             className="
@@ -49,7 +43,6 @@ export default function About() {
             "
           />
 
-          {/* Texto — em xl idem; em 2xl tipografia e largura maiores */}
           <p
             className="
               font-sora font-normal text-[14px] leading-[25px] tracking-normal mt-12
@@ -61,7 +54,6 @@ export default function About() {
             game close. Prioritize out key view / vendor we've. 4-blocker gave shift ideal based post.
           </p>
 
-          {/* CTA — mantém em xl; cresce em 2xl */}
           <button
             className="
               w-[225px] rounded-[29px] border uppercase font-sora font-normal

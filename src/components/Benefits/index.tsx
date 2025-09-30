@@ -3,13 +3,10 @@ import BenefitCarousel from '../../components/benefitCarousel'
 
 export default function Benefits() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mt-[-8px]">
       <div className="w-[90%] h-1 bg-[#000] text-white flex px-6 py-1 xl:px-12 xl:py-1 2xl:px-16 2xl:py-1"></div>
       <div className="flex justify-center">
-        {/* a faixa vermelha já está responsiva */}
         <div className="w-[90%] h-[238px] bg-[#DE5A53] text-white flex px-6 py-6 xl:px-12 xl:py-8 2xl:px-16 2xl:py-10">
-
-          {/* BLOCO ESQUERDO — número + título (sem afastamento do próximo bloco) */}
           <div
             className="border border-white/80 flex-shrink-0
                       basis-[315px] xl:basis-[360px] 2xl:basis-[420px]
@@ -31,9 +28,7 @@ export default function Benefits() {
             </div>
           </div>
 
-          {/* BLOCO DIREITO — encostado no bloco esquerdo, sem margens */}
           <div className="flex-1 flex flex-col border border-white/80 border-l-0 ">
-            {/* Linha de 3 cards: sem gap; linhas internas via divide */}
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 divide-x divide-y divide-white/80 border-b-0 border-white/80">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="min-h-[120px] xl:min-h-[115px] py-3 px-4">
@@ -50,7 +45,6 @@ export default function Benefits() {
               ))}
             </div>
 
-            {/* Carousel abaixo — colado no grid (sem margem), só com linha separadora */}
             <div className="flex-1 border-t border-white/80 border-b-0">
               <BenefitCarousel />
             </div>

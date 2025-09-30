@@ -3,15 +3,12 @@ import MinimalistBanner from "../minimalistBanner";
 export default function MinimalistContent() {
   return (
     <section className="relative flex justify-center overflow-x-hidden">
-      {/* canvas central: trava em 1280px no xl, expande no 2xl */}
       <div className="relative w-full max-w-[1280px] 2xl:max-w-[1600px]">
 
-        {/* camada de fundo */}
         <div className="relative z-0">
           <MinimalistBanner />
         </div>
 
-        {/* textos sobrepostos (mesmas posições no xl) */}
         <h3
           className="
             absolute z-20 font-sora font-bold text-white
@@ -35,7 +32,6 @@ export default function MinimalistContent() {
           low-hanging data most driver's.
         </p>
 
-        {/* CTA principal */}
         <button
           className="
             absolute z-20 flex items-center space-x-[10px] rounded-[29px] border border-current uppercase text-[#000]
@@ -48,7 +44,6 @@ export default function MinimalistContent() {
           <span className="uppercase">Explorar</span>
         </button>
 
-        {/* “Ver todos” no topo direito */}
         <div
           className="
             absolute z-20 bg-white flex items-center justify-center

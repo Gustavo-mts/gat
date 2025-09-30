@@ -17,16 +17,12 @@ import Facebook from '../../assets/images/facebook.png'
 export default function Footer() {
   return (
     <section className="bg-[#efefef] flex flex-col justify-center items-center pt-6">
-      {/* borda externa */}
       <div className="w-[96%] min-h-[189px] flex border border-[#000]">
-        {/* coluna esquerda (logo) */}
         <div className="w-1/5 bg-[#373737] flex justify-center items-center border-r border-[#000]">
           <img src={Gat} className="w-[75px] h-[101.12px]" />
         </div>
 
-        {/* coluna do meio */}
         <div className="w-2/5 border-r border-[#000]">
-          {/* nav superior com borda inferior */}
           <div className="flex justify-between p-2 font-sora font-bold text-[12px] leading-[25px] tracking-normal uppercase border-b border-[#000]">
             <span>Produtos</span>
             <span>Coleções</span>
@@ -36,9 +32,7 @@ export default function Footer() {
             <span>Blog</span>
           </div>
 
-          {/* blocos internos */}
           <div className="flex">
-            {/* formas de pagamento (card com borda) */}
             <div className="w-[40%] p-4 border-r border-[#000]">
               <h5 className="font-sora font-bold text-[12px] leading-[25px] tracking-normal uppercase mb-2">
                 Formas de pagamento
@@ -54,7 +48,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* certificados e segurança (card com borda) */}
             <div className="flex-1 p-4">
               <h5 className="font-sora font-bold text-[12px] leading-[25px] tracking-normal uppercase">
                 Certificados e segurança
@@ -74,9 +67,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* coluna direita */}
         <div className="w-2/5 flex">
-          {/* ajuda (coluna com divisória à direita) */}
           <div className="w-2/5 border-r border-[#000]">
             <div className="p-4">
               <h5 className="font-sora font-bold text-[12px] leading-[25px] tracking-normal uppercase">Ajuda</h5>
@@ -91,7 +82,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* contato + redes (dois cards empilhados) */}
           <div className="flex-1 flex flex-col">
             <div className="p-4 border-b border-[#000]">
               <h5 className="font-sora font-bold text-[12px] leading-[25px] tracking-normal uppercase">Contato</h5>
@@ -122,7 +112,7 @@ export default function Footer() {
           <p>©2024, GAT. TODOS OS DIREITOS RESERVADOS.</p>
         </div>
         <div>
-          <p>GAT  LTDA. | R. Ondina Carvalheira Peixoto, 300 - Chácaras Palmeiras | Cataguases - MG | CEP 36774-550</p>
+          <p>GAT LTDA. | R. Ondina Carvalheira Peixoto, 300 - Chácaras Palmeiras | Cataguases - MG | CEP 36774-550</p>
         </div>
       </div>
     </section>

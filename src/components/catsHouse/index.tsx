@@ -1,7 +1,6 @@
 export default function CatsHouse() {
   return (
     <section className="flex justify-center">
-      {/* Wrapper com background e tamanho responsivo */}
       <div
         className="
           relative flex w-full
@@ -10,7 +9,6 @@ export default function CatsHouse() {
           max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1600px]
         "
       >
-        {/* PANE ESQUERDO (área do cenário com pins) */}
         <div
           className="
             relative
@@ -18,7 +16,6 @@ export default function CatsHouse() {
             h-full
           "
         >
-          {/* Pins (posições em % do pane esquerdo; escalam naturalmente) */}
           <div className="absolute inline-flex items-center justify-center w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] 2xl:w-[36px] 2xl:h-[36px] top-[50%] left-[30.9%] -translate-y-1/2 rounded-full bg-white">
             1
           </div>
@@ -40,7 +37,6 @@ export default function CatsHouse() {
           </div>
         </div>
 
-        {/* PANE DIREITO (cartão) */}
         <div className="flex items-start justify-start h-full ml-16">
           <div
             className="

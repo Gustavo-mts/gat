@@ -10,7 +10,6 @@ export default function MostWanted() {
                       4xl:px-12
                       w-full max-w-[1400px] 2xl:max-w-[1600px]">
 
-        {/* BLOCO ESQUERDO (título + CTA) */}
         <div className="
             w-[330px] h-[401px]
             xl:w-[380px] xl:h-[430px]
@@ -46,8 +45,6 @@ export default function MostWanted() {
             <span className="font-sora font-light">Ver tudo</span>
           </button>
         </div>
-
-        {/* CARDS DE PRODUTO */}
         {[1, 2, 3].map((i) => (
           <div
             key={i}
@@ -58,7 +55,6 @@ export default function MostWanted() {
               flex flex-col
             "
           >
-            {/* badges */}
             <div className="flex flex-col items-end pr-2 xl:pr-4">
               <div className="
                   flex items-center space-x-[10px]
@@ -82,7 +78,6 @@ export default function MostWanted() {
               </div>
             </div>
 
-            {/* imagem do produto */}
             <div className="w-full flex justify-center my-12 xl:my-10 2xl:my-10">
               <img
                 src={Chart}
@@ -90,7 +85,6 @@ export default function MostWanted() {
               />
             </div>
 
-            {/* descrição + variações */}
             <div className="mt-auto">
               <div className="flex justify-between items-end">
                 <div className="font-sora leading-none tracking-normal">
@@ -109,7 +103,6 @@ export default function MostWanted() {
             </div>
           </div>
         ))}
-
       </div>
     </div>
   )

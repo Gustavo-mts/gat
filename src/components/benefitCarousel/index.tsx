@@ -77,20 +77,18 @@ export default function BenefitCarouselInfiniteTight({
   const rafRef = useRef<number | null>(null)
   const lastTsRef = useRef<number | null>(null)
 
-  // medir a largura do primeiro item (sem o gap)
   const measureFirst = useCallback(() => {
     if (!firstRef.current) return
     const w = firstRef.current.getBoundingClientRect().width
     setFirstWidth(w)
   }, [])
 
-  // observar mudanças de tamanho
   useEffect(() => {
     measureFirst()
     const ro = new ResizeObserver(measureFirst)
     if (firstRef.current) ro.observe(firstRef.current)
     return () => ro.disconnect()
-  }, [measureFirst, order]) // quando o array rotaciona, o "primeiro" muda
+  }, [measureFirst, order])
 
   useEffect(() => {
     const tick = (ts: number) => {
@@ -101,9 +99,8 @@ export default function BenefitCarouselInfiniteTight({
       if (!paused) {
         setOffset((prev) => {
           const next = prev + speed * dt
-          const threshold = firstWidth + gap // largura do primeiro + gap entre ele e o próximo
+          const threshold = firstWidth + gap
           if (threshold > 0 && next >= threshold) {
-            // passou do primeiro: rotaciona e ajusta offset
             setOrder((old) => (old.length > 0 ? [...old.slice(1), old[0]] : old))
             return next - threshold
           }

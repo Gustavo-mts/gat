@@ -10,45 +10,49 @@ import NewsLetter from './components/newsLetter'
 import Footer from './components/footer'
 import { Header } from './components/header'
 
-
 function App() {
-
-
   return (
     <>
+      <header className="absolute inset-x-0 top-8 z-50">
+        <Header />
+      </header>
 
-      <section className="relative">
-        <header className="absolute inset-x-0 top-8 z-50">
-          <Header />
-        </header>
-
-        {/* se precisar dar espaço para o header, use padding-top */}
-        <div className="pt-[12px] mb-16">
+      <main>
+        {/* Coleções (Banner Principal) - Ocupa o topo da página, abaixo do Header fixo */}
+        <section className="relative pt-[12px]">
           <Collections />
+        </section>
+
+        {/* Benefícios */}
+        <Benefits />
+
+        {/* Conteúdo Minimalista */}
+        <section className='mt-16'>
+          <MinimalistContent />
+        </section>
+
+        {/* Mais Vendidos */}
+        <MostWanted />
+
+        {/* Categorias */}
+        <Categories />
+
+        {/* Casas de Gato / Produto em Destaque */}
+        <CatsHouse />
+
+        {/* Sobre */}
+        <About />
+
+        {/* Comunidade de Gatos (Carrossel) */}
+        <div>
+          <CatsCommunit />
         </div>
-      </section>
 
+        {/* Newsletter */}
+        <NewsLetter />
+      </main>
 
-      <Benefits /> 
-
-      <section className='mt-16'>
-        <MinimalistContent />
-      </section>
-
-      <MostWanted />
-
-      <Categories />
-
-      <CatsHouse />
-      
-      <About />
-
-      <div>
-        <CatsCommunit />
-      </div>
-
-      <NewsLetter />
-
+      {/* Footer */}
       <Footer />
     </>
   )

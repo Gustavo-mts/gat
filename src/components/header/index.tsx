@@ -12,11 +12,8 @@ import Cart from '../../assets/icons/cart.png'
 export function Header() {
   return (
     <header className="relative">
-
-      {/* Main header content */}
       <div className="relative mx-auto bg-black text-white w-[92%]">
         <div className="flex items-center justify-between h-[40px] xl:h-[40px] gap-8">
-          {/* Logo */}
           <div className="flex items-center flex-shrink-0 bg-[#efefef] h-[40px]">
             <div className="mt-0 flex space-between px-4 mt-[20px]">
               <img src={Logo} className="w-[24px] h-[24.16px] mr-1" />
@@ -24,7 +21,6 @@ export function Header() {
             </div>
           </div>
 
-          {/* Navigation - Left side */}
           <nav className="flex items-center gap-6 xl:gap-8">
             <button className="flex items-center gap-2 text-sm xl:text-base hover:text-pink-400 transition-colors">
               <img src={Menu} />
@@ -36,7 +32,6 @@ export function Header() {
             </button>
           </nav>
 
-          {/* Navigation - Right side */}
           <nav className="flex items-center gap-2 xl:gap-4 flex-1 justify-end">
             <a href="#" className="text-sm xl:text-base hover:text-pink-400 transition-colors whitespace-nowrap">
               blog
@@ -52,7 +47,6 @@ export function Header() {
             </a>
           </nav>
 
-          {/* Search bar */}
           <div className="relative flex-shrink-0 w-64 xl:w-[213px]">
             <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
             <input
@@ -62,7 +56,6 @@ export function Header() {
             />
           </div>
 
-          {/* User actions */}
           <div className="flex items-center gap-4 flex-shrink-0">
             <img src={Conta} />
             <div className="flex">

@@ -3,9 +3,7 @@ import NewsLetterImage from '../../assets/images/newsletter.png'
 export default function NewsLetter() {
   return (
     <section className="flex justify-center bg-[#efefef]">
-      {/* Mantém 1280px em xl; expande no 2xl */}
       <div className="w-full max-w-[1280px] 2xl:max-w-[1600px] px-4 xl:px-6 2xl:px-10 py-4 xl:py-0 flex border border-b-0 border-l-0 border-r-0">
-        {/* IMAGEM */}
         <div className="p-6 2xl:p-8 flex-shrink-0">
           <img
             src={NewsLetterImage}
@@ -13,8 +11,6 @@ export default function NewsLetter() {
             alt="Assine a newsletter para ganhar 10% na primeira compra"
           />
         </div>
-
-        {/* TEXTO + FORM */}
         <div className="pb-6 pt-16 2xl:pt-20 flex-1 min-w-0">
           <h3 className="font-sora font-normal text-[50px] leading-none tracking-normal
                          2xl:text-[64px]">
@@ -22,7 +18,6 @@ export default function NewsLetter() {
           </h3>
 
           <div className="flex flex-col xl:flex-row mt-8 gap-8 xl:gap-10 2xl:gap-14">
-            {/* Texto de apoio */}
             <div className="font-sora text-[14px] leading-[25px] tracking-normal
                             2xl:text-[16px] 2xl:leading-[28px]">
               <h5 className="font-bold uppercase">
@@ -33,7 +28,6 @@ export default function NewsLetter() {
               </p>
             </div>
 
-            {/* Formulário */}
             <form className="w-full xl:w-[75%] xl:pl-10 2xl:pl-16 space-y-6 2xl:space-y-7">
               <label className="block">
                 <span className="text-sm 2xl:text-base font-medium text-gray-700 uppercase tracking-wider">
