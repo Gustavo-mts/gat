@@ -99,19 +99,6 @@ function VerticalPeekCarousel({
   // viewport: 4 slides + 3 gaps (peek vem via padding-right)
   const viewportBase = w * 4 + g * 3
 
-  // navegar 1 passo (com animação)
-  const goNext = useCallback(() => {
-    if (dragging) return
-    setEnableTransition(true)
-    setStepDir(1)
-  }, [dragging])
-
-  const goPrev = useCallback(() => {
-    if (dragging) return
-    setEnableTransition(true)
-    setStepDir(-1)
-  }, [dragging])
-
   // fim da transição: rotaciona e reseta para posição 0 sem transição
   const handleTransitionEnd = useCallback(() => {
     if (dragging) return
